@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Nicestart</string>
     <string name="usuario">Nombre de usuario</string>
+    <string name="correo">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
+    <string name="repetir_contrasena">Repetir contraseña</string>
     <string name="login">Inicia sesión</string>
     <string name="registro">Regístrate</string>
 </resources>
