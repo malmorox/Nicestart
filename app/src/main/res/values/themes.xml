@@ -6,11 +6,18 @@
 
     </style>
 
-    <style name="Theme.Nicestart.ActionBar" parent="Theme.MaterialComponents.DayNight">
-
+    <style name="Theme.Nicestart.ActionBar.Transparent" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:textColorPrimary">@color/blanco</item>
+        <item name="actionBarStyle">@style/TransparentActionBar</item>
     </style>
 
     <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
+    </style>
+
+    <style name="TransparentActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="background">@android:color/transparent</item>
+        <item name="android:elevation">0dp</item>
+        <item name="displayOptions">showHome</item>
     </style>
 </resources>

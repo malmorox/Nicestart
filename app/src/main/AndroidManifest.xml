@@ -15,7 +15,7 @@
             android:name=".Signup"
             android:exported="false"
             android:parentActivityName=".Login"
-            android:theme="@style/Theme.Nicestart.ActionBar" />
+            android:theme="@style/Theme.Nicestart.ActionBar.Transparent" />
         <activity
             android:name=".Login"
             android:exported="true"
