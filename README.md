@@ -8,3 +8,5 @@
 
 - signup_activity <br>
 ![signup_activity](img/signup.png)
+
+>[Creativecommons Org Licenses By Sa 4](http://creativecommons.org/licenses/by-sa/4.0/)
