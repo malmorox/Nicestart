@@ -1,9 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Nicestart" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.Nicestart" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimary"></item>
+
     </style>
 
-    <style name="Theme.Nicestart" parent="Base.Theme.Nicestart" />
+    <style name="Theme.Nicestart.ActionBar.Transparent" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:textColorPrimary">@color/blanco</item>
+        <item name="actionBarStyle">@style/TransparentActionBar</item>
+    </style>
+
+    <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="TransparentActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="background">@android:color/transparent</item>
+        <item name="android:elevation">0dp</item>
+        <item name="displayOptions">showHome</item>
+    </style>
 </resources>
