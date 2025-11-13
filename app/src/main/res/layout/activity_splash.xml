@@ -8,7 +8,7 @@
     tools:context=".Splash">
 
     <ImageView
-        android:id="@+id/backView"
+        android:id="@+id/vistaFondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,16 +28,14 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/logo"
-            app:tint="@color/blanco">
-
-        </ImageView>
+            app:tint="@color/blanco" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/anta"
             android:text="@string/app_name"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blanco"
             android:textSize="50sp">
 
         </TextView>
