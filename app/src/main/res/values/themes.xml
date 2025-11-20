@@ -2,9 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Nicestart" parent="Theme.MaterialComponents.DayNight">
         <item name="android:windowIsTranslucent">true</item>
-        <item name="colorPrimary"></item>
-
+        <item name="colorPrimary">@color/colorPrincipal</item>
     </style>
+
+    <style name="Theme.Nicestart" parent="Base.Theme.Nicestart" />
 
     <style name="Theme.Nicestart.ActionBar.Transparent" parent="Theme.MaterialComponents.DayNight">
         <item name="android:textColorPrimary">@color/blanco</item>
