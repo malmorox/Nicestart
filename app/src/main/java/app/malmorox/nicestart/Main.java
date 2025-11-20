@@ -7,15 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
@@ -40,8 +35,14 @@ public class Main extends AppCompatActivity {
             mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            Toast toast = Toast.makeText(Main.this, "Ejemplo de Toast", Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(Main.this, "Ejemplo de Toast", Toast.LENGTH_LONG);
+            //toast.show();
+
+            ConstraintLayout mainLayout = findViewById(R.id.main);
+
+            Snackbar snackbar = Snackbar
+                    .make(mainLayout, "Snackbar funcionando!", Snackbar.LENGTH_LONG);
+            snackbar.show();
 
             swipeLayout.setRefreshing(false);
         }
