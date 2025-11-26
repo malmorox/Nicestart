@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,11 @@ public class Splash extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash);
         openApp();
+
+        ImageView thunder = findViewById(R.id.logosplash);
+
+        Animation myanim = AnimationUtils.loadAnimation(this, R.anim.blink);
+        thunder.startAnimation(myanim);
 
         ImageView vistaFondo = findViewById(R.id.vistaFondo);
 
