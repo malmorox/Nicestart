@@ -1,5 +1,6 @@
 package app.malmorox.nicestart;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.material.snackbar.Snackbar;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Main extends AppCompatActivity {
     private SwipeRefreshLayout swipeLayout;
@@ -40,9 +42,16 @@ public class Main extends AppCompatActivity {
 
             ConstraintLayout mainLayout = findViewById(R.id.main);
 
-            Snackbar snackbar = Snackbar
-                    .make(mainLayout, "Snackbar funcionando!", Snackbar.LENGTH_LONG);
-            snackbar.show();
+            //Snackbar snackbar = Snackbar
+            //        .make(mainLayout, "Snackbar funcionando!", Snackbar.LENGTH_LONG);
+            //snackbar.show();
+
+            //AÑADIENDO SWEET ALERT AL REFRESCAR LA PANTALLA
+            SweetAlertDialog pDialog = new SweetAlertDialog(Main.this, SweetAlertDialog.PROGRESS_TYPE);
+            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+            pDialog.setTitleText("Loading");
+            pDialog.setCancelable(true);
+            pDialog.show();
 
             swipeLayout.setRefreshing(false);
         }
