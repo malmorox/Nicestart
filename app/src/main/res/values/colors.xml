@@ -6,5 +6,6 @@
     <color name="fondo_gradiente_2">#4FEEFF</color>
     <color name="borde_campos">#D9EBFF</color>
     <color name="colorPrincipal">#4282C3</color>
+    <color name="colorFondo">#242424</color>
     <color name="boton">#214773</color>
 </resources>
