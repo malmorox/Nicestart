@@ -1,5 +1,6 @@
 package app.malmorox.nicestart;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -9,11 +10,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Main extends AppCompatActivity {
     private SwipeRefreshLayout swipeLayout;
@@ -31,6 +33,43 @@ public class Main extends AppCompatActivity {
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
     }
 
+    // DIÁLOGO MODAL
+
+    public void showAlertDialogButtonClicked(Main mainActivity) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+        builder.setTitle("Ejemplo");
+        builder.setMessage("Ejemplo de AlertDialog");
+        builder.setCancelable(true);
+
+        //builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
+
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("Otro", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.exit(0);
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     // SWIPE REFRESH
 
     protected SwipeRefreshLayout.OnRefreshListener
@@ -42,16 +81,9 @@ public class Main extends AppCompatActivity {
 
             ConstraintLayout mainLayout = findViewById(R.id.main);
 
-            //Snackbar snackbar = Snackbar
-            //        .make(mainLayout, "Snackbar funcionando!", Snackbar.LENGTH_LONG);
-            //snackbar.show();
-
-            //AÑADIENDO SWEET ALERT AL REFRESCAR LA PANTALLA
-            SweetAlertDialog pDialog = new SweetAlertDialog(Main.this, SweetAlertDialog.PROGRESS_TYPE);
-            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-            pDialog.setTitleText("Loading");
-            pDialog.setCancelable(true);
-            pDialog.show();
+            Snackbar snackbar = Snackbar
+                    .make(mainLayout, "Snackbar funcionando!", Snackbar.LENGTH_LONG);
+            snackbar.show();
 
             swipeLayout.setRefreshing(false);
         }
@@ -76,6 +108,9 @@ public class Main extends AppCompatActivity {
         if (id == R.id.favoritos) {
             Toast toast = Toast.makeText(this, "Pulsado el favoritos", Toast.LENGTH_LONG);
             toast.show();
+        }
+        if (id == R.id.ajustes) {
+            showAlertDialogButtonClicked(Main.this);
         }
         return super.onOptionsItemSelected(item);
     }
