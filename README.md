@@ -19,11 +19,11 @@ carga de imágenes y más.
     <th>Profile</th>
   </tr>
   <tr>
-    <td><img src="img/splash.png" style="width:100%;"/></td>
-    <td><img src="img/login.png" style="width:100%;"/></td>
-    <td><img src="img/signup.png" style="width:100%;"/></td>
-    <td><img src="img/main.png" style="width:100%;"/></td>
-    <td><img src="img/profile.png" style="width:100%;"/></td>
+    <td><img src="img/splash.jpg" style="width:100%;"/></td>
+    <td><img src="img/login.jpg" style="width:100%;"/></td>
+    <td><img src="img/signup.jpg" style="width:100%;"/></td>
+    <td><img src="img/main.jpg" style="width:100%;"/></td>
+    <td><img src="img/profile.jpg" style="width:100%;"/></td>
   </tr>
 </table>
 
