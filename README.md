@@ -59,14 +59,16 @@ app/
 ------------------------------------------------------------------------
 
 ### 🧑‍💻 Autor
-<div style="display:flex; align-items:center; gap:15px;">
 
-  <img src="https://avatars.githubusercontent.com/u/73890028?v=4" width="70" style="border-radius:5px;"/>
-
-  <div>
-    <strong>Marcos Almorox</strong><br>
-    2º DAM - Desarrollo de Interfaces<br>
-    <em>IES Juan de la Cierva</em>
-  </div>
-
-</div>
+<table>
+  <tr>
+    <td>
+      <img src="https://avatars.githubusercontent.com/u/73890028?v=4" width="70" />
+    </td>
+    <td>
+      <strong>Marcos Almorox</strong><br>
+      2º DAM - Desarrollo de Interfaces<br>
+      <em>IES Juan de la Cierva</em>
+    </td>
+  </tr>
+</table>
