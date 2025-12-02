@@ -12,18 +12,18 @@ carga de imágenes y más.
 
 <table style="width:100%; table-layout:fixed;">
   <tr>
-    <th style="width:20%">Splash</th>
-    <th style="width:20%">Login</th>
-    <th style="width:20%">Signup</th>
-    <th style="width:20%">Main</th>
-    <th style="width:20%">Profile</th>
+    <th>Splash</th>
+    <th>Login</th>
+    <th>Signup</th>
+    <th>Main</th>
+    <th>Profile</th>
   </tr>
   <tr>
-    <td><img src="captures/splash.png" style="width:100%;"/></td>
-    <td><img src="captures/login.png" style="width:100%;"/></td>
-    <td><img src="captures/signup.png" style="width:100%;"/></td>
-    <td><img src="captures/main.png" style="width:100%;"/></td>
-    <td><img src="captures/profile.png" style="width:100%;"/></td>
+    <td><img src="img/splash.png" style="width:100%;"/></td>
+    <td><img src="img/login.png" style="width:100%;"/></td>
+    <td><img src="img/signup.png" style="width:100%;"/></td>
+    <td><img src="img/main.png" style="width:100%;"/></td>
+    <td><img src="img/profile.png" style="width:100%;"/></td>
   </tr>
 </table>
 
