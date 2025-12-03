@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/logosplash"
+            android:id="@+id/logoSplash"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/logo"

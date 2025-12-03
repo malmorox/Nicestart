@@ -22,10 +22,10 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         openApp();
 
-        ImageView thunder = findViewById(R.id.logosplash);
+        ImageView logo = findViewById(R.id.logoSplash);
 
-        Animation myanim = AnimationUtils.loadAnimation(this, R.anim.blink);
-        thunder.startAnimation(myanim);
+        Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.blink);
+        logo.startAnimation(myAnim);
 
         ImageView vistaFondo = findViewById(R.id.vistaFondo);
 
