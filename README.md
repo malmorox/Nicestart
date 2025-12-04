@@ -133,9 +133,16 @@ La pantalla Main combina e incorpora varias funcionalidades de interfaz para enr
     }
     ```
 
-### SweetAlert
+### Validación de login con SweetAlert
 
-En el login, como extra, se ha integrado un SweetAlert para informar si se ha iniciado sesión correctamente, si las credenciales no son correctas o si hay campos vacios.
+Para iniciar sesión en la app, se ha añadido una validación básica:
+el usuario debe introducir `admin` como nombre y `1234` como contraseña.
+
+Según el caso, se muestra un SweetAlert informando del resultado:
+
+🟢 Login correcto\
+🔴 Credenciales incorrectas\
+⚠️ Campos vacíos
 
 Dependencia añadida en build.gradle:
 
@@ -143,7 +150,7 @@ Dependencia añadida en build.gradle:
 implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 ```
 
-### Recarga dinámica de imágenes con WebView
+### Recarga dinámica con WebView
 
 En la pantalla Main utilizamos un WebView para mostrar una imagen generada aleatoriamente desde la web [thispersondoesnotexist.com](thispersondoesnotexist.com).
 Para evitar incrustar HTML “a capón” en el código Java, hemos movido el contenido a un archivo externo ubicado en `app/src/main/assets/persona.html`.
