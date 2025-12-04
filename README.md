@@ -143,6 +143,29 @@ Dependencia añadida en build.gradle:
 implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 ```
 
+### Recarga dinámica de imágenes con WebView
+
+En la pantalla Main utilizamos un WebView para mostrar una imagen generada aleatoriamente desde la web [thispersondoesnotexist.com](thispersondoesnotexist.com).
+Para evitar incrustar HTML “a capón” en el código Java, hemos movido el contenido a un archivo externo ubicado en `app/src/main/assets/persona.html`.
+
+Carga del HTML en el WebView:
+```java
+myWebView = (WebView) findViewById(R.id.vistaWeb);
+
+WebSettings webSettings = myWebView.getSettings();
+webSettings.setLoadWithOverviewMode(true);
+webSettings.setUseWideViewPort(true);
+
+// Carga del archivo HTML almacenado en assets
+myWebView.loadUrl("file:///android_asset/persona.html");
+```
+En el `onRefresh`:
+```java
+public void onRefresh() {
+    myWebView.reload();
+```
+
+
 ## 📂 Estructura del proyecto
 
 ``` plaintext

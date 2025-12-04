@@ -7,6 +7,8 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
@@ -18,6 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
+    private WebView myWebView;
     private SwipeRefreshLayout swipeLayout;
 
     @Override
@@ -26,11 +29,19 @@ public class Main extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        TextView micontexto = findViewById(R.id.holaMundo);
-        registerForContextMenu(micontexto);
+        WebView myContext = findViewById(R.id.vistaWeb);
+        registerForContextMenu(myContext);
 
         swipeLayout = findViewById(R.id.swipeRefresh);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
+
+        myWebView = (WebView) findViewById(R.id.vistaWeb);
+
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+
+        myWebView.loadUrl("file:///android_asset/persona.html");
     }
 
     // DIÁLOGO MODAL
@@ -82,9 +93,10 @@ public class Main extends AppCompatActivity {
             ConstraintLayout mainLayout = findViewById(R.id.main);
 
             Snackbar snackbar = Snackbar
-                    .make(mainLayout, "Snackbar funcionando!", Snackbar.LENGTH_LONG);
+                    .make(mainLayout, "Nueva persona desbloqueda", Snackbar.LENGTH_LONG);
             snackbar.show();
 
+            myWebView.reload();
             swipeLayout.setRefreshing(false);
         }
     };
