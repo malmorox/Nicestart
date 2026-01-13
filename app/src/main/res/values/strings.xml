@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nicestart</string>
+    <string name="app_name" translatable="false">Nicestart</string>
     <string name="usuario">Nombre de usuario</string>
     <string name="correo">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
