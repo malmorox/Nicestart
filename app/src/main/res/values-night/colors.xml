@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="fondo_gradiente_1">#061E3C</color>
+    <color name="fondo_gradiente_2">#238C99</color>
+    <color name="borde_campos">#A9D0FF</color>
+    <color name="colorPrincipal">#0E3950</color>
+    <color name="colorFondo">#242424</color>
+    <color name="boton">#529AEB</color>
+</resources>
