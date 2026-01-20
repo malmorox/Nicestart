@@ -15,10 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nicestart">
         <activity
+            android:name=".MainBAB"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="true"
-            android:theme="@style/Theme.Nicestart.ActionBar.Transparent">
-        </activity>
+            android:theme="@style/Theme.Nicestart.ActionBar.Transparent"></activity>
         <activity
             android:name=".Splash"
             android:exported="true"
@@ -38,12 +40,12 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:theme="@style/Theme.Nicestart.NoActionBar"></activity>
+            android:theme="@style/Theme.Nicestart.NoActionBar" />
         <activity
             android:name=".Main"
             android:exported="true"
-            android:theme="@style/Theme.Nicestart.ActionBar">
-        </activity>
+            android:theme="@style/Theme.Nicestart.ActionBar"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
