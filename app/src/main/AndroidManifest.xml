@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nicestart">
         <activity
-            android:name=".MainBAB"
+            android:name=".MainBab"
             android:exported="false" />
         <activity
             android:name=".Profile"
