@@ -172,6 +172,27 @@ public void onRefresh() {
     myWebView.reload();
 ```
 
+### Internacionalización (multiidioma)
+La app está disponible en **español** (idioma por defecto) e **inglés**, adaptándose automáticamente al idioma configurado en el dispositivo.
+
+Estructura de archivos de los recursos:
+``` plaintext
+res/
+├── values/
+│   └── strings.xml        (Español - por defecto)
+└── values-en/
+    └── strings.xml        (English)
+```
+
+### Modo claro/oscuro (Day/Night theme)
+
+Soporte para temas claro y oscuro con adaptación automática a las preferencias del sistema. El cambio manual está en desarrollo.
+
+Los recursos están organizados en:
+- **values/colors.xml**: paleta de colores para el tema claro *(por defecto)*
+- **values-night/colors.xml**: paleta de colores para el tema oscuro
+- **themes.xml**: temas base con soporte para DayNight
+
 
 ## 📂 Estructura del proyecto
 
