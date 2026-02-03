@@ -1,6 +1,7 @@
 package app.malmorox.nicestart;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -118,8 +119,8 @@ public class Main extends AppCompatActivity {
             toast.show();
         }
         if (id == R.id.favoritos) {
-            Toast toast = Toast.makeText(this, "Pulsado el favoritos", Toast.LENGTH_LONG);
-            toast.show();
+            Intent intent = new Intent(Main.this, MainBab.class);
+            startActivity(intent);
         }
         if (id == R.id.ajustes) {
             showAlertDialogButtonClicked(Main.this);

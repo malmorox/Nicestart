@@ -16,7 +16,8 @@
         android:theme="@style/Theme.Nicestart">
         <activity
             android:name=".MainBab"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.Nicestart.NoActionBar"/>
         <activity
             android:name=".Profile"
             android:exported="true"

@@ -1,4 +1,4 @@
-# 📳 Nicestart - Proyecto de Desarrollo de Interfaces (Android)
+# Nicestart - Proyecto de Desarrollo de Interfaces (Android)
 
 Nicestart es una aplicación Android desarrollada en **Android Studio** y Java
 como parte del módulo de **Desarrollo de Interfaces** en 2º de DAM.\
@@ -15,6 +15,7 @@ carga de imágenes y más.
     <th>Login</th>
     <th>Signup</th>
     <th>Main</th>
+    <th>Main con BAB</th>
     <th>Profile</th>
   </tr>
   <tr>
@@ -22,6 +23,7 @@ carga de imágenes y más.
     <td><img src="img/login.jpg" style="width:100%;"/></td>
     <td><img src="img/signup.jpg" style="width:100%;"/></td>
     <td><img src="img/main.jpg" style="width:100%;"/></td>
+    <td><img src="img/main-bab.jpg" style="width:100%;"/></td>
     <td><img src="img/profile.jpg" style="width:100%;"/></td>
   </tr>
 </table>
@@ -31,7 +33,7 @@ carga de imágenes y más.
 
 ### Splash Screen con animación
 
-La app arranca con una pantalla Splash donde el logo aparece con una animación tipo “parpadeo” (`blink`), dando una sensación de entrada dinámica antes de mostrar la pantalla de login.
+La app arranca con una pantalla Splash donde **el logo aparece con una animación** tipo “parpadeo” (`blink`), dando una sensación de entrada dinámica antes de mostrar la pantalla de login.
 
 ``` java
 ImageView logo = findViewById(R.id.logoSplash);
@@ -42,7 +44,7 @@ logo.startAnimation(myAnim);
 
 ### Carga de imágenes con Glide
 
-Uso de la librería Glide para la gestión de imágenes, que permite cargar recursos de forma eficiente y con mejor rendimiento que de manera estandar.
+Uso de la **librería Glide** para la gestión de imágenes, que permite cargar recursos de forma eficiente y con mejor rendimiento que de manera estandar.
 
 Dependencia añadida en build.gradle:
 
@@ -54,7 +56,7 @@ implementation 'com.github.bumptech.glide:glide:4.16.0'
 
 La pantalla Main combina e incorpora varias funcionalidades de interfaz para enriquecer la experiencia de usuario:
 
-- AppBar como barra superior de la aplicación.
+- **AppBar como barra superior de la aplicación.**
 
     ```java
     @Override
@@ -64,7 +66,7 @@ La pantalla Main combina e incorpora varias funcionalidades de interfaz para enr
     }
     ```
 
-- Menú de opciones en la AppBar (pulsando sale un Toast o un diálogo Modal).
+- **Menú de opciones en la AppBar** (pulsando sale un Toast o un diálogo Modal).
 
     ```xml
     <menu ...>
@@ -78,7 +80,7 @@ La pantalla Main combina e incorpora varias funcionalidades de interfaz para enr
     </menu>
     ```
 
-- Menú contextual al hacer pulsación larga sobre un elemento de texto.
+- **Menú contextual** al hacer pulsación larga sobre un elemento de texto.
 
     ```java
     @Override
@@ -94,7 +96,7 @@ La pantalla Main combina e incorpora varias funcionalidades de interfaz para enr
     ```
 
 
-- Swipe Refresh para recargar el contenido deslizando hacia abajo (sale un Snackbar).
+- **Swipe Refresh** para recargar el contenido deslizando hacia abajo (sale un Snackbar).
 
     ```java
     private SwipeRefreshLayout swipeLayout;
@@ -115,7 +117,7 @@ La pantalla Main combina e incorpora varias funcionalidades de interfaz para enr
         }
     };
     ```
-- Diálogo modal (básico y para ejemplo) al seleccionar una opción del AppBar.
+- **Diálogo modal** (básico y para ejemplo) al seleccionar una opción del AppBar.
 
     ```java
     public void showAlertDialogButtonClicked(Main mainActivity) {
@@ -135,10 +137,10 @@ La pantalla Main combina e incorpora varias funcionalidades de interfaz para enr
 
 ### Validación de login con SweetAlert
 
-Para iniciar sesión en la app, se ha añadido una validación básica:
+Para iniciar sesión en la app, se ha añadido una **validación básica**:
 el usuario debe introducir `admin` como nombre y `1234` como contraseña.
 
-Según el caso, se muestra un SweetAlert informando del resultado:
+Según el caso, se muestra un **SweetAlert** informando del resultado:
 
 🟢 Login correcto\
 🔴 Credenciales incorrectas\
@@ -152,7 +154,7 @@ implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 
 ### Recarga dinámica con WebView
 
-En la pantalla Main utilizamos un WebView para mostrar una imagen generada aleatoriamente desde la web [thispersondoesnotexist.com](thispersondoesnotexist.com).
+En la pantalla Main utilizamos un **WebView** para mostrar una imagen generada aleatoriamente desde la web [thispersondoesnotexist.com](thispersondoesnotexist.com).
 Para evitar incrustar HTML “a capón” en el código Java, hemos movido el contenido a un archivo externo ubicado en `app/src/main/assets/persona.html`.
 
 Carga del HTML en el WebView:
@@ -193,6 +195,60 @@ Los recursos están organizados en:
 - **values-night/colors.xml**: paleta de colores para el tema oscuro
 - **themes.xml**: temas base con soporte para DayNight
 
+### MainBab con BottomAppBar, FAB y BottomSheet
+
+La pantalla MainBab implementa una interfaz moderna con Material Design utilizando un **BottomAppBar** (barra inferior de navegación), un **FloatingActionButton** (FAB) centrado, y un **BottomSheetDialog** que se despliega desde abajo.
+
+Componentes principales:
+
+- **BottomAppBar**: barra inferior con menú de opciones y botón de navegación que abre un BottomSheet.
+    ```java
+        BottomAppBar bottomAppBar = findViewById(R.id.bottom_app_bar);
+        
+        bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if (item.getItemId() == R.id.heart) {
+                    Toast.makeText(MainBab.this, "Añadido a favoritos", Toast.LENGTH_SHORT).show();
+                } else if (item.getItemId() == R.id.search) {
+                    Toast.makeText(MainBab.this, "Empezando la busqueda", Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
+        });
+    ```
+
+- **FloatingActionButton (FAB)**: botón flotante anclado al centro del BottomAppBar.
+    ```java
+        FloatingActionButton myFab = findViewById(R.id.floating_action_button);
+        
+        myFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainBab.this, "FAB clickado", Toast.LENGTH_SHORT).show();
+            }
+        });
+    ```
+
+- **BottomSheetDialog**: diálogo modal que se despliega al pulsar el icono de navegación del BottomAppBar, mostrando varias opciones.
+    ```java
+        bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showBottomSheetDialog();
+            }
+        });
+
+        private void showBottomSheetDialog() {
+            View view = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_dialog, null);
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+            bottomSheetDialog.setContentView(view);
+            bottomSheetDialog.show();
+
+            TextView option1 = view.findViewById(R.id.option1);
+            // ...configuración de listeners para cada opción
+        }
+    ```
 
 ## 📂 Estructura del proyecto
 
@@ -201,9 +257,12 @@ app/
  ├── java/.../nicestart
  │     ├── Login.java
  │     ├── Main.java
+ │     ├── MainBab.java
  │     ├── Profile.java
  │     ├── Signup.java
  │     └── Splash.java
+ ├── assets/
+ │     └── persona.html
  └── res/
        ├── anim/
        ├── color/
